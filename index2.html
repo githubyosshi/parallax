@@ -34,9 +34,16 @@
         $('#bg1').css('background-position', '0 '+dy+'px');
 
         if (dy > 340){
-          $('#bg2').css('background-position', '0 '+(dy-340)+'px');
+          // $('#bg2').css('background-position', '0 '+(dy-340)+'px');
+          $('#bg2').css('background-position', (dy-340) + 'px ' + (dy-340)+ 'px');
         } else {
-          $('#bg1').css('background-position', '0 0');
+          $('#bg2').css('background-position', '0 0');
+        }
+
+        if (dy > 680){
+          $('#bg3').css('background-position', '0 '+(dy-680)*2+'px');
+        } else {
+          $('#bg3').css('background-position', '0 0');
         }
       });
     });
