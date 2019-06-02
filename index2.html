@@ -18,6 +18,14 @@
     #bg1 { background: url('c1.jpg') no-repeat; }
     #bg2 { background: url('c2.jpg') no-repeat; }
     #bg3 { background: url('c3.jpg') no-repeat; }
+    #msg {
+      font-size: 48px;
+      font-weight: bold;
+      font-family: Verdana, Arial, sans-serif;
+      color: orange;
+      opacity: 0;
+      position: fixed;
+    }
   </style>
 </head>
 <body>
@@ -44,6 +52,15 @@
           $('#bg3').css('background-position', '0 '+(dy-680)*2+'px');
         } else {
           $('#bg3').css('background-position', '0 0');
+        }
+
+        if (dy > 680){
+          $('#msg').css('opacity', (dy-680)/340);
+          $('#msg').css('top', 200)
+          var dx = (dy-680) > 400 ? 400: (dy-680);
+          $('#msg').css('left', dx);
+        } else {
+          $('#msg').css('opacity', 0);
         }
       });
     });
